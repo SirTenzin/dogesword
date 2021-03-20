@@ -1,6 +1,7 @@
 const { raw, wrap } = require('@dogehouse/kebab');
 const Base = require('./Base');
 const Room = require('./Room');
+const Message = require('./Message');
 const EventEmitter = require('events');
 
 module.exports = class Client extends Base {
@@ -25,6 +26,7 @@ module.exports = class Client extends Base {
         this.emit("ready", this.connection)
         this.wrapper = wrap(this.connection);
         this.rooms = new Map();
+        this.wrapper.subscribe.newChatMsg(async ({ userId, msg }) => { this.emit("message", new Message(msg, this))})
         await this.wrapper.query.getTopPublicRooms().then(e => {
             e.rooms.forEach(room => {
                 this.rooms.set(room.id, new Room(this.wrapper, room))
