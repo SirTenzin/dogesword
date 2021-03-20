@@ -1,0 +1,13 @@
+{
+  "name": "dogehouse.js",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/uuid": "^8.3.0",
+    "@types/ws": "^7.4.0"
+  },
+  "dependencies": {
+    "@dogehouse/kebab": "^0.1.3"
+  }
+}
