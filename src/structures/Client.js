@@ -24,11 +24,11 @@ module.exports = class Client extends Base {
         );
         this.emit("ready", this.connection)
         this.wrapper = wrap(this.connection);
-        this.channels = new Map();
+        this.rooms = new Map();
         await this.wrapper.query.getTopPublicRooms().then(e => {
             e.rooms.forEach(room => {
-                this.channels.set(room.id, new Room(this.wrapper, room))
-                this.emit("addRoom", this.channels.get(room.id));
+                this.rooms.set(room.id, new Room(this.wrapper, room))
+                this.emit("addRoom", this.rooms.get(room.id));
             });
         })
     }
