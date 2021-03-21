@@ -17,4 +17,12 @@ module.exports = class Room {
     async disconnect() {
         await this.w.mutation.leaveRoom();
     }
+
+    async join() {
+        await this.w.mutation.joinRoom(this.id);
+    }
+
+    async connect() {
+        await this.w.mutation.joinRoom(this.id);
+    }
 }

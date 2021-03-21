@@ -12,7 +12,10 @@ npm i git+https://github.com/SirTenzin/dogesword.git
 
 ```
 const Client = require('../src/structures/Client');
-const client = new Client();
+const client = new Client({
+    isBot: true,
+    prefix: false
+});
 
 client.login(
     process.env.T,
@@ -23,7 +26,9 @@ client.login(
 # Events
 
 ```
-debug : Debug events for development
-addRoom : During login, this event signals the current room being added to Client#rooms
-ready : Called on login
+debug: Debug events for development
+addRoom: During login, this event signals the current room being added to Client#rooms
+ready: Called on login
+message: Called on a new message
+command: Called if isBot and prefix are true/defined and matched
 ```

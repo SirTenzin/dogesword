@@ -1,5 +1,5 @@
 {
-  "name": "dogehouse.js",
+  "name": "dogesword",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
@@ -10,5 +10,8 @@
   "dependencies": {
     "@dogehouse/kebab": "^0.1.3",
     "dotenv": "^8.2.0"
+  },
+  "scripts": {
+    "dev": "nodemon test/index.js"
   }
 }
