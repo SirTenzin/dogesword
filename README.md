@@ -5,7 +5,7 @@ Welcome to dogesword. A wrapper for the dogehouse API.
 # Installation
 
 ```
-npm i git+https://github.com/SirTenzin/dogesword.git
+npm i dogesword
 ```
 
 # Usage
