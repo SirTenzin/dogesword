@@ -22,7 +22,7 @@ client.on("addRoom", (room) => {
 
 client.on("command", (command) => {
     if(command.content.startsWith("s!say")) {
-        command.reply(command.content.split("s!say ")[1])
+        command.room.send(command.content.split("s!say ")[1])
     }
 })
 
