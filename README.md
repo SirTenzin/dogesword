@@ -1,6 +1,7 @@
 # Welcome
 
-Welcome to dogesword. A wrapper for the dogehouse API.
+Welcome to dogesword. A wrapper for the dogehouse API client "kebab". You can use this to create
+a simple DogeHouse bot
 
 # Installation
 
