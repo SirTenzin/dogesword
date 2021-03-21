@@ -18,6 +18,10 @@ const client = new Client({
     prefix: false
 });
 
+client.on("message", (message) => {
+    message.reply("Hello from DogeSword!")
+});
+
 client.login(
     process.env.T,
     process.env.RT
