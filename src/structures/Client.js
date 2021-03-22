@@ -2,8 +2,9 @@ const { raw, wrap, tokensToString, stringToToken } = require('@dogehouse/kebab')
 const Base = require('./Base');
 const Room = require('./Room');
 const Message = require('./Message');
+const ClientUser = require('./Client/ClientUser');
 
-module.exports = class Client extends Base {
+class Client extends Base {
 
     constructor(opts) {
         super();
@@ -31,6 +32,7 @@ module.exports = class Client extends Base {
      * Login using your tokens
      * @param {string} t Token to login with
      * @param {*} rt Refresh Token to login with
+     * @function
      */
 
     async login(t, rt) {
@@ -45,24 +47,31 @@ module.exports = class Client extends Base {
         );
 
         this.emit("ready", this.connection);
-        this.user = this.connection;
+        this.user = new ClientUser(this.connection);
         this.wrapper = wrap(this.connection);
-        await this.wrapper.subscribe.newChatMsg(async ({ userId, msg }) => {
-            this.emit("message", new Message(msg, this))
+        var s = await this.wrapper.subscribe.newChatMsg(async ({ userId, msg }) => {
+            this.emit("message", new Message(msg, this, this.rooms))
 
             if(this.listenForCommands) {
                 if(tokensToString(msg.tokens).startsWith(this.prefix)) {
-                    this.emit("command", new Message(msg, this))
+                    this.emit("command", new Message(msg, this, this.rooms))
                 }
             }
         });
         
-        await this.wrapper.query.getTopPublicRooms().then(e => {
+        var l = await this.wrapper.query.getTopPublicRooms().then(e => {
             e.rooms.forEach(room => {
                 this.rooms.set(room.id, new Room(this.wrapper, room))
-                return this.emit("addRoom", this.rooms.get(room.id));
+                this.emit("addRoom", this.rooms.get(room.id));
             });
         });
+
+        return { 
+            l,
+            s
+        }
     }
 
 }
+
+module.exports = Client;

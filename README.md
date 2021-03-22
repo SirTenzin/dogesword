@@ -12,7 +12,7 @@ npm i dogesword
 # Usage
 
 ```
-const Client = require('../src/structures/Client');
+const Client = require('dogesword');
 const client = new Client({
     isBot: true,
     prefix: false

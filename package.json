@@ -1,7 +1,11 @@
 {
   "name": "dogesword",
-  "version": "1.0.0",
-  "main": "index.js",
+  "version": "1.0.1",
+  "main": "src/index.js",
+  "repository": {
+    "url": "https://github.com/SirTenzin/dogesword",
+    "type": "github"
+  },
   "license": "MIT",
   "devDependencies": {
     "@types/uuid": "^8.3.0",

@@ -7,7 +7,7 @@ const client = new Client({
 });
 
 client.on("ready", (e) => {
-    console.log(`Bot logged in as ${e.user.username}`);
+    console.log(`Bot logged in as ${JSON.stringify(e.user)}`);
 })
 
 client.on("message", (message) => {
@@ -15,7 +15,8 @@ client.on("message", (message) => {
 });
 
 client.on("addRoom", (room) => {
-    if(room.id == 'c7dd13fa-5d75-40fa-958f-a7004ffa4a4a') {
+    console.log(room)
+    if(room.id == 'ee31fca3-000f-433f-a638-5681f5f9561e') {
         room.join();
     }
 });
@@ -23,6 +24,8 @@ client.on("addRoom", (room) => {
 client.on("command", (command) => {
     if(command.content.startsWith("s!say")) {
         command.room.send(command.content.split("s!say ")[1])
+    } else if(command.content.startsWith("s!flip")) {
+        command.room.send("bruh 123")
     }
 })
 
