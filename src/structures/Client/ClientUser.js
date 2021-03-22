@@ -22,7 +22,7 @@ class ClientUser {
     }
 
     get displayAvatarURL() {
-        return this.
+        return this
     }
 }
 
