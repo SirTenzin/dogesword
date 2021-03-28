@@ -1,6 +1,6 @@
 {
   "name": "dogesword",
-  "version": "1.0.2BETA",
+  "version": "1.0.2",
   "main": "src/index.js",
   "repository": {
     "url": "https://github.com/SirTenzin/dogesword",
