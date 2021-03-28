@@ -1,5 +1,6 @@
 const { stringToToken } = require('@dogehouse/kebab')
 
+
 class Room {
 
     #w
@@ -12,22 +13,17 @@ class Room {
     }
 
     async send(message) {
-        await this.#w.mutation.joinRoom(this.id);
         await this.#w.mutation.sendRoomChatMsg(stringToToken(message));
-    }
-
-    async disconnect() {
-        await this.#w.mutation.leaveRoom();
     }
 
     async join() {
         await this.#w.mutation.joinRoom(this.id);
         this.#w.currentRoom = this.id;
+        this.#w.clientObj.emit('joinRoom', this);
     }
 
-    async connect() {
-        await this.#w.mutation.joinRoom(this.id);
-        this.#w.currentRoom = this.id;
+    play(audioStream) {
+        
     }
 }
 

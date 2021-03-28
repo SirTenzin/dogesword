@@ -1,6 +1,6 @@
 require('dotenv').config();
 
-const Client = require('../src/structures/Client');
+const Client = require('../src/structures/Client/Client');
 const client = new Client({
     isBot: true,
     prefix: "s!"
@@ -16,9 +16,13 @@ client.on("message", (message) => {
 
 client.on("addRoom", (room) => {
     console.log(room)
-    if(room.id == 'ee31fca3-000f-433f-a638-5681f5f9561e') {
+    if(room.id == '819ae88c-94aa-4377-a31f-5affa9178295') {
         room.join();
     }
+});
+
+client.on("joinRoom", (room) => {
+    console.log("Joined", room)
 });
 
 client.on("command", (command) => {

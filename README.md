@@ -14,12 +14,18 @@ npm i dogesword
 ```
 const Client = require('dogesword');
 const client = new Client({
-    isBot: true,
-    prefix: false
+    isBot: true, // boolean
+    prefix: "!" // string or empty string
 });
 
+client.on("addRoom", (room) => {
+    if(/* condition */) {
+        room.join();
+    }
+})
+
 client.on("message", (message) => {
-    message.reply("Hello from DogeSword!")
+    message.reply("Hello from DogeSword!");
 });
 
 client.login(
