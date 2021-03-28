@@ -42,4 +42,20 @@ addRoom: During login, this event signals the current room being added to Client
 ready: Called on login
 message: Called on a new message
 command: Called if isBot and prefix are true/defined and matched
+joinRoom: Called when bot joins a room
 ```
+
+# Classes
+
+```
+Base
+Client
+ClientUser
+Message
+Room
+User
+```
+
+# Documentation
+
+soon :flushed:
