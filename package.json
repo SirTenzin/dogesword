@@ -1,5 +1,5 @@
 {
-  "name": "dogesword",
+  "name": "@sirtenzin/dogesword",
   "version": "1.0.3",
   "main": "src/index.js",
   "repository": {
