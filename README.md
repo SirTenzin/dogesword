@@ -57,4 +57,4 @@ User
 ```
 
 # Documentation
-[Wiki](https://github.com/sirtenzin/dogesword)
+[Wiki](https://github.com/sirtenzin/dogesword/wiki)
