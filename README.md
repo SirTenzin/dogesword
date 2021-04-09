@@ -57,5 +57,4 @@ User
 ```
 
 # Documentation
-
-soon :flushed:
+[Wiki](https://github.com/sirtenzin/dogesword)
