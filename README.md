@@ -11,7 +11,7 @@ npm i dogesword
 
 # Usage
 
-```
+```js
 const Client = require('dogesword');
 const client = new Client({
     isBot: true, // boolean
