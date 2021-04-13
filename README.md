@@ -1,3 +1,7 @@
+# DogeSword has been deprecated!
+
+This package is deprecated. Use [DogeHouse.js](https://npm.im/dogehouse.js)
+
 # Welcome
 
 Welcome to dogesword. A wrapper for the dogehouse API client "kebab". You can use this to create
