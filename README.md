@@ -1,4 +1,4 @@
-# Deprecated!
+# Deprecated
 
 This package is deprecated. Use [DogeHouse.js](https://npm.im/dogehouse.js)
 
